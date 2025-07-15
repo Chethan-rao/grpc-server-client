@@ -30,7 +30,7 @@ impl Greeter for MyGreeter {
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let addr = "[::1]:8080".parse()?;
     let greeter = MyGreeter::default();
-
+    // println!(">> {:?}", std::env::var("HOME"));
     Server::builder()
         .add_service(GreeterServer::new(greeter))
         .serve(addr)
